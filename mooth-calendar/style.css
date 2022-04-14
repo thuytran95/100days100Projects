@@ -1,0 +1,130 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-size: 1rem;
+	line-height: 1;
+}
+
+:root {
+	font-size: 1rem;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.container {
+	padding: 1.5rem;
+}
+
+.title {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
+
+.content {
+	text-align: center;
+	font-size: 1rem;
+	margin-bottom: 0.5rem;
+}
+
+.content + p {
+	text-align: center;
+	font-size: 1rem;
+}
+
+.mood-icons {
+	margin-top: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	font-size: 1.5rem;
+}
+
+.mood-icons + p {
+	text-align: center;
+	font-size: 1rem;
+	margin-top: 1rem;
+	margin-bottom: 1.5rem;
+}
+
+.mood-icon {
+	background: none;
+	border: none;
+	font-size: 2rem;
+	outline: none;
+	cursor: pointer;
+}
+
+#mood-1 {
+	color: hsl(168, 41%, 30%);
+}
+
+#mood-2 {
+	color: hsl(148, 67%, 67%);
+}
+
+#mood-3 {
+	color: hsl(88, 67%, 87%);
+}
+
+#mood-4 {
+	color: hsl(28, 70%, 76%);
+}
+
+#mood-5 {
+	color: hsl(2, 81%, 56%);
+}
+
+.calendar {
+	--gap: 20px;
+	--columns: 3;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-left: calc(-1 * var(--gap));
+}
+
+.month {
+	width: calc(100% / var(--columns) - var(--gap));
+	margin-left: var(--gap);
+	text-align: center;
+}
+
+.month__name {
+	margin-bottom: 1rem;
+}
+
+.days,
+.day {
+	display: flex;
+}
+
+.days {
+	gap: 20px;
+	justify-content: center;
+}
+
+.day {
+	flex-direction: column;
+	gap: 16px;
+}
+
+.date {
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+	background-color: antiquewhite;
+	text-align: center;
+	line-height: 2;
+}
+
+.days__list{
+	display: flex;
+	gap: 1.5rem;
+}

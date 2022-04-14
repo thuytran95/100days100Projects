@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Mood Calendar</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+			integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<h3 class="title text-center"><span id="currentYear"></span> Mood Calendar</h3>
+			<p class="content text-center">
+				~ color each day depending on what your mood was/is
+			</p>
+			<p class="text-center">Select mood:</p>
+			<div class="mood-icons">
+				<button class="mood-icon" id="mood-1">
+					<i class="fa fa-laugh"></i>
+				</button>
+				<button class="mood-icon" id="mood-2">
+					<i class="fa fa-smile"></i>
+				</button>
+				<button class="mood-icon" id="mood-3">
+					<i class="fa fa-meh"></i>
+				</button>
+				<button class="mood-icon" id="mood-4">
+					<i class="fa fa-frown"></i>
+				</button>
+				<button class="mood-icon" id="mood-5">
+					<i class="fa fa-sad-tear"></i>
+				</button>
+			</div>
+			<p class="text-center">then click on the circles below</p>
+			<div class="calendar" id="calendar">
+				<div class="month">
+					<h4 class="month__name">January</h4>
+					<div class="days">
+						<div class="days__list">
+							<span>Sun</span>
+							<span>Mon</span>
+							<span>Tue</span>
+							<span>Wed</span>
+							<span>Thu</span>
+							<span>Fri</span>
+							<span>Sat</span>
+						</div>
+
+						<div class="day">
+							<p className="day__name">Sun</p>
+							<span class="date"></span>
+							<span class="date">6</span>
+							<span class="date">13</span>
+							<span class="date">20</span>
+							<span class="date">27</span>
+						</div>
+						<div class="day">
+							<p className="day__name">Mon</p>
+							<span class="date"></span>
+							<span class="date">6</span>
+							<span class="date">13</span>
+							<span class="date">20</span>
+							<span class="date">27</span>
+						</div>
+						<div class="day">
+							<p className="day__name">Tue</p>
+							<span class="date"></span>
+							<span class="date">6</span>
+							<span class="date">13</span>
+							<span class="date">20</span>
+							<span class="date">27</span>
+						</div>
+						<div class="day">
+							<p className="day__name">Wed</p>
+							<span class="date"></span>
+							<span class="date">6</span>
+							<span class="date">13</span>
+							<span class="date">20</span>
+							<span class="date">27</span>
+						</div>
+						<div class="day">
+							<p className="day__name">Thu</p>
+							<span class="date"></span>
+							<span class="date">6</span>
+							<span class="date">13</span>
+							<span class="date">20</span>
+							<span class="date">27</span>
+						</div>
+						<div class="day">
+							<p className="day__name">Fri</p>
+							<span class="date"></span>
+							<span class="date">6</span>
+							<span class="date">13</span>
+							<span class="date">20</span>
+							<span class="date">27</span>
+						</div>
+						<div class="day">
+							<p className="day__name">Sat</p>
+							<span class="date"></span>
+							<span class="date">6</span>
+							<span class="date">13</span>
+							<span class="date">20</span>
+							<span class="date">27</span>
+						</div>
+					</div>
+				</div>
+				<div class="month">
+					<h4 class="month__name">January</h4>
+					<div class="days">
+						<div class="day">
+							<p className="day__name">Sun</p>
+							<span class="date"></span>
+							<span class="date">6</span>
+							<span class="date">13</span>
+							<span class="date">20</span>
+							<span class="date">27</span>
+						</div>
+						<div class="day">
+							<p className="day__name">Mon</p>
+							<span class="date"></span>
+							<span class="date">6</span>
+							<span class="date">13</span>
+							<span class="date">20</span>
+							<span class="date">27</span>
+						</div>
+						<div class="day">
+							<p className="day__name">Tue</p>
+							<span class="date"></span>
+							<span class="date">6</span>
+							<span class="date">13</span>
+							<span class="date">20</span>
+							<span class="date">27</span>
+						</div>
+						<div class="day">
+							<p className="day__name">Wed</p>
+							<span class="date"></span>
+							<span class="date">6</span>
+							<span class="date">13</span>
+							<span class="date">20</span>
+							<span class="date">27</span>
+						</div>
+						<div class="day">
+							<p className="day__name">Thu</p>
+							<span class="date"></span>
+							<span class="date">6</span>
+							<span class="date">13</span>
+							<span class="date">20</span>
+							<span class="date">27</span>
+						</div>
+						<div class="day">
+							<p className="day__name">Fri</p>
+							<span class="date"></span>
+							<span class="date">6</span>
+							<span class="date">13</span>
+							<span class="date">20</span>
+							<span class="date">27</span>
+						</div>
+						<div class="day">
+							<p className="day__name">Sat</p>
+							<span class="date"></span>
+							<span class="date">6</span>
+							<span class="date">13</span>
+							<span class="date">20</span>
+							<span class="date">27</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="./main.js"></script>
+	</body>
+</html>
