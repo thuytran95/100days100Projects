@@ -11,9 +11,13 @@ const months = new Array(12).fill().map((_, index) => {
 		weekday: 'short'
 	});
 
+	console.log(firstDate);
+
 	return {
 		name: monthName,
 		totalDays: getTotalDays(currentYear, index + 1),
+		firstDate: firstDate.getDay(),
+		month: firstDate.getMonth(),
 		firstDateName
 	};
 });
@@ -24,21 +28,34 @@ const calendar = document.getElementById('calendar');
 yearElement.innerHTML = new Date().getFullYear();
 
 let calendarHTML = '';
-months.map(item => {
+months.map((item, index) => {
+	console.log(item.firstDate);
 	let listDate = '';
-	console.log(item.name);
 	for (let i = 1; i <= item.totalDays; i++) {
-		console.log(i)
+		const date = new Date(currentYear, item.month, i).getDate();
+
+		// console.log(date);
+		// if(i < 7 && )
 	}
 
-	calendarHTML += `<div class="month">
+	const monthContainer = document.createElement('div');
+	monthContainer.classList.add('month');
+	monthContainer.innerHTML = `<div class="month">
 	<h4 class="month__name">${item.name}</h4>
-	<div class='days'>
-
+	<div class='days ${item.name}_days'>
+	<div class="days__list">
+	<span>Sun</span>
+	<span>Mon</span>
+	<span>Tue</span>
+	<span>Wed</span>
+	<span>Thu</span>
+	<span>Fri</span>
+	<span>Sat</span>
+</div>
 	</div>
 	</div>`;
+
+	calendar.appendChild(monthContainer);
 });
 
-calendar.innerHTML = calendarHTML;
-
-console.log(months);
+// calendar.innerHTML = calendarHTML;
