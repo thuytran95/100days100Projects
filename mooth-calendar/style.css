@@ -150,3 +150,23 @@ body {
 	justify-content: flex-start;
 
 }
+
+@media screen and (max-width: 992px) {
+	.month{
+		width: 50%;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.month{
+		width: 50%;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.month{
+		width: 100%;
+	}
+}
+
+

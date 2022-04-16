@@ -62,6 +62,7 @@ dateList.forEach(item => {
 	const month = item.getMonth();
 	const month_container = document.querySelector(`.days__list.month-${month + 1}`)
 
+	// different days between date 1st and Sunday (getDay = 0)
 	if(item.getDate() === 1 && item.getDay() !== 0){
 		for(let i = 0; i < item.getDay(); i++){
 			const emptyEl = document.createElement('div');
@@ -81,9 +82,3 @@ dateList.forEach(item => {
 
 
 })
-
-
-
-// calendar.innerHTML = calendarHTML;
-
-
