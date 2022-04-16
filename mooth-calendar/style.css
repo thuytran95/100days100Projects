@@ -120,6 +120,7 @@ body {
 .date{
 	width:calc(100% / 7);
 	height:calc(100% / 7);
+	margin-bottom: 10px;
 }
 
 .circle {
@@ -130,6 +131,17 @@ body {
 	text-align: center;
 	line-height: 2;
 	display: inline-block;
+	flex-shrink: 0;
+}
+
+.circle-text {
+	width: 2rem;
+	height: 2rem;
+	text-align: center;
+	line-height: 2;
+	display: inline-block;
+	flex-shrink: 0;
+
 }
 
 .days__list{
