@@ -78,7 +78,7 @@ dateList.forEach(item => {
 	existDateEl.innerHTML = `<span class="circle">${item.getDate()}</span>`
 
 	month_container.appendChild(existDateEl)
-
-
-
 })
+
+
+console.log('learn git');
