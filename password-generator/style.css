@@ -35,6 +35,7 @@ body {
 
 input[type="number"] {
 	width: 80px;
+	height: 30px;
 }
 
 input[type="checkbox"] {
@@ -48,6 +49,7 @@ input[type="checkbox"] {
 	flex-grow: 1;
 	line-height: 1.5;
 	padding: 5px;
+	min-height: 40px;
 }
 
 
@@ -71,5 +73,9 @@ input[type="checkbox"] {
 	color: red;
 	text-align: right;
 	margin-top: 8px;
+}
 
+.my-4{
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
