@@ -47,6 +47,7 @@ body {
 
 .clock {
 	background-color: white;
+	color: var(--color-dark);
 	box-shadow: inset 0 0 20px hsl(0, 20%, 75%);
 	width: 400px;
 	height: 400px;
@@ -98,6 +99,14 @@ body {
 	height: 50%;
 }
 
+.needle i::after {
+	position: absolute;
+	content: "";
+	width: 0;
+	height: 0;
+	transform: translateY(-90%);
+}
+
 .needle.hour {
 	transform: rotateZ(42deg);
 }
@@ -106,7 +115,7 @@ body {
 	transform: rotateZ(30deg);
 }
 
-.needle.hour i{
+.needle.hour i {
 	width: 8px;
 	background-color: green;
 	transform: scaleY(0.5);
@@ -122,4 +131,20 @@ body {
 	width: 2px;
 	background-color: #ff2972;
 	transform: scaleY(0.9);
+}
+
+.needle.hour i::after {
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-bottom: 8px solid green;
+}
+.needle.min i::after {
+	border-left: 2px solid transparent;
+	border-right: 2px solid transparent;
+	border-bottom: 4px solid #fee800;
+}
+.needle.second i::after {
+	border-left: 1px solid transparent;
+	border-right: 1px solid transparent;
+	border-bottom: 2px solid #ff2972;
 }
