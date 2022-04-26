@@ -1,0 +1,40 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	background-color: hsl(46, 31%, 87%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	height: 100vh;
+	font-size: 16px;
+	padding: 100px 0;
+}
+
+#editContainer{
+	background-color: white;
+	width: 80%;
+	min-height: 100px;
+	margin-top: 30px;
+}
+
+.tag-list{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	list-style: none;
+	padding: 10px;
+	margin-top: 20px;
+}
+
+
+.tag{
+	background-color:hsl(45, 73%, 59%) ;
+	padding: 10px;
+	border-radius: 8px;
+	color:hsl(228, 76%, 19%)
+}
