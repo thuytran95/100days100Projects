@@ -1,0 +1,55 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.container{
+	background-color: hsl(10, 15%, 80%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+}
+
+.switch-container{
+	background-color: hsl(126, 50%, 38%);
+	width: 240px;
+	height: 80px;
+	border-radius: 40px;
+	position: relative;
+	padding: 0 10px;
+	animation: switching 1s infinite;
+}
+
+@keyframes switching {
+	from{
+		background-color: hsl(126, 50%, 38%);
+		transform: rotateZ(30deg);
+	}
+
+	to {
+		background-color: hsl(356, 92%, 52%);
+		transform: rotateZ(0deg);
+	}
+}
+
+.ball{
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 10px;
+	transform: translateY(-50%);
+	background-color: hsl(10, 15%, 80%);
+	box-shadow:  0 0 10px rgba(0, 0,0, 0.75) inset;
+	transition: all 0.4s;
+}
+
+.ball.scroll{
+	left: calc(100% - 70px);
+}
+
