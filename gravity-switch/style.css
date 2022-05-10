@@ -6,7 +6,7 @@
 	box-sizing: border-box;
 }
 
-.container{
+.container {
 	background-color: hsl(10, 15%, 80%);
 	display: flex;
 	align-items: center;
@@ -14,52 +14,57 @@
 	min-height: 100vh;
 }
 
-.switch-container{
+.switch-container {
 	background-color: hsl(126, 50%, 38%);
 	width: 240px;
 	height: 80px;
 	border-radius: 40px;
 	position: relative;
 	padding: 0 10px;
+	transform: rotate(0deg);
+	transition: background-color 1s ease-in-out;
 }
 
-.switch-container.down{
+.switch-container.down {
+	background-color: hsl(356, 92%, 52%);
 	animation: switching 1s ease-in forwards;
 }
-.switch-container.up{
+.switch-container.up {
+	background-color: hsl(126, 50%, 38%);
 	animation: switchingRight 1s ease-in forwards;
 }
 
 @keyframes switching {
-	0%, 25%{
-		background-color: hsl(126, 50%, 38%);
-		transform: rotateZ(30deg);
+	0% {
+		transform: rotateZ(0deg);
 	}
 
-	50%, 100% {
-		background-color: hsl(356, 92%, 52%);
+	25%,
+	50% {
+		transform: rotateZ(20deg);
+	}
+
+	100% {
 		transform: rotateZ(0deg);
 	}
 }
 
 @keyframes switchingRight {
-	0%, 25% {
-		background-color: hsl(356, 92%, 52%);
+	0% {
 		transform: rotateZ(0deg);
 	}
 
-	 50% {
-		transform: rotate(-30deg);
+	25%,
+	50% {
+		transform: rotate(-20deg);
 	}
 
-	 100%{
-		background-color: hsl(126, 50%, 38%);
+	100% {
 		transform: rotateZ(0deg);
 	}
-
 }
 
-.ball{
+.ball {
 	width: 60px;
 	height: 60px;
 	border-radius: 50%;
@@ -68,31 +73,34 @@
 	left: 10px;
 	transform: translateY(-50%);
 	background-color: hsl(10, 15%, 80%);
-	box-shadow:  0 0 10px rgba(0, 0,0, 0.75) inset;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.75) inset;
 }
 
-.switch-container.down > .ball{
+.switch-container.down > .ball {
 	animation: moveBallRight 1.5s ease-in forwards;
 }
-.switch-container.up > .ball{
+.switch-container.up > .ball {
 	animation: moveBallLeft 1.5s ease-in forwards;
 }
 
-
 @keyframes moveBallRight {
-	0%, 25%{
+	0%,
+	25% {
 		transform: translate(0px, -50%);
 	}
-	0%, 100%{
-		transform: translate(160px, -50%);
-	}
-}
-@keyframes moveBallLeft{
-	0%, 25%{
-		transform: translate(160px, -50%);
-	}
-	0%, 100%{
-		transform: translate(0px, -50%);
-	}
-}
 
+	50%,
+	100% {
+		transform: translate(160px, -50%);
+	}
+}
+@keyframes moveBallLeft {
+	0%,
+	25% {
+		transform: translate(160px, -50%);
+	}
+	50%,
+	100% {
+		transform: translate(0px, -50%);
+	}
+}
