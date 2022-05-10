@@ -21,19 +21,42 @@
 	border-radius: 40px;
 	position: relative;
 	padding: 0 10px;
-	animation: switching 1s infinite;
+}
+
+.switch-container.down{
+	animation: switching 1s ease-in forwards;
+}
+.switch-container.up{
+	animation: switchingRight 1s ease-in forwards;
 }
 
 @keyframes switching {
-	from{
+	0%, 25%{
 		background-color: hsl(126, 50%, 38%);
 		transform: rotateZ(30deg);
 	}
 
-	to {
+	50%, 100% {
 		background-color: hsl(356, 92%, 52%);
 		transform: rotateZ(0deg);
 	}
+}
+
+@keyframes switchingRight {
+	0%, 25% {
+		background-color: hsl(356, 92%, 52%);
+		transform: rotateZ(0deg);
+	}
+
+	 50% {
+		transform: rotate(-30deg);
+	}
+
+	 100%{
+		background-color: hsl(126, 50%, 38%);
+		transform: rotateZ(0deg);
+	}
+
 }
 
 .ball{
@@ -46,10 +69,30 @@
 	transform: translateY(-50%);
 	background-color: hsl(10, 15%, 80%);
 	box-shadow:  0 0 10px rgba(0, 0,0, 0.75) inset;
-	transition: all 0.4s;
 }
 
-.ball.scroll{
-	left: calc(100% - 70px);
+.switch-container.down > .ball{
+	animation: moveBallRight 1.5s ease-in forwards;
+}
+.switch-container.up > .ball{
+	animation: moveBallLeft 1.5s ease-in forwards;
+}
+
+
+@keyframes moveBallRight {
+	0%, 25%{
+		transform: translate(0px, -50%);
+	}
+	0%, 100%{
+		transform: translate(160px, -50%);
+	}
+}
+@keyframes moveBallLeft{
+	0%, 25%{
+		transform: translate(160px, -50%);
+	}
+	0%, 100%{
+		transform: translate(0px, -50%);
+	}
 }
 
