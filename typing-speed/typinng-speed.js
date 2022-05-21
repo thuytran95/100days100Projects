@@ -13,13 +13,12 @@ let lastLetter = '';
 
 const allText = text.innerText;
 const allWord = allText.split('');
-let words = allWord;
+const total = allWord.length;
 
 input.focus();
 
 input.addEventListener('input', event => {
 	const { value: inputValue } = event.target;
-	const word = words[0];
 	const currentInputValue = inputValue.replace(/ +/g, ' ');
 	const length = currentInputValue.length;
 	if (currentInputValue) {
@@ -31,49 +30,32 @@ input.addEventListener('input', event => {
 			mapTextDecoration.set(index, element);
 		});
 
+		let totalCorrect = 0;
+
 		const allTextInput = wordInputSplit
 			.map((item, index) => {
-				console.log(mapTextDecoration.get(index));
-				if (mapTextDecoration.get(index) && mapTextDecoration.get(index) === item && item) {
+				if (
+					mapTextDecoration.get(index) &&
+					mapTextDecoration.get(index) === item
+				) {
+					totalCorrect += 1;
 					return `<span class='hightlight'>${mapTextDecoration.get(
 						index
 					)}</span>`;
+				} else if (!mapTextDecoration.get(index)) {
+					return ``;
 				} else {
-					return `<span >${mapTextDecoration.get(index)}</span>`;
+					return `<span class="error" >${mapTextDecoration.get(
+						index
+					)}</span>`;
 				}
 			})
 			.join('');
 
-		console.log(allTextInput);
-
 		const remainText = allWord.slice(length).join('');
 
 		text.innerHTML = allTextInput + remainText;
-		// 		console.log(textDecoration);
-		// 		const newText = allText
-		// 			.split('')
-		// 			.map((char, charIndex) => {
-		// 				let isHightLight = false;
-		//
-		// 				if (charIndex <= inputValue.length) {
-		// 					return inputValue
-		// 						.split('')
-		// 						.map((text, idx) => {
-		// 							if (text === char && charIndex === idx) {
-		// 								isHightLight = true;
-		// 								return `<span class=${
-		// 									isHightLight ? 'hightlight' : 'normal'
-		// 								}>${char}</span>`;
-		// 							}
-		// 							return '';
-		// 						})
-		// 						.join('');
-		// 				}
-		//
-		// 				return `<span>${char}</span>`;
-		// 			})
-		// 			.join('');
-		//
-		// 		text.innerHTML = newText;
+		const percent = (totalCorrect / total) * 100;
+		progress.style.width = `${percent}%`;
 	}
 });
