@@ -1,0 +1,25 @@
+.photo__list{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.card{
+	max-width: 200px;
+	overflow: hidden;
+}
+
+.card__title{
+	width: 100%;
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	
+}
+
+a{
+	color: black;
+	text-decoration: none;
+
+}
